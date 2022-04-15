@@ -1,0 +1,41 @@
+shayc331, shaharshaked
+Shay Cohen (314997388), Shahar Shaked (207173394)
+EX: 2
+
+FILES:
+uthreads.cpp -- Implementation of the given uthreads.h library.
+Thread.h -- Header file for user-level thread class.
+Thread.c -- Implementation of Thread.h.
+Makefile.
+README - This file.
+
+REMARKS:
+Still very fun exercise, learned a lot.
+
+ANSWERS:
+
+Q1:
+We would opt to use user-level threads whenever we would like to be responsible for our threads scheduling, context
+switches, etc' instead of leaving the task to the OS and by that reducing the overhead. Moreover, if we know our threads
+will not access any I/O devices, it is reasonable to use user-level threads since (If there is an I/O access,
+the OS will halt the entire process instead of just the current running thread).
+
+
+Q2:
+The main advantages of creating a new process for each tab are being able to perform parallel run of multiple tabs at
+once, and if a tab executes a system-call, other could still be running.
+The main disadvantages of this method executed by Google Chrome are increased overhead, leading to slower performance,
+and damages the tabs ability to communicate with each other.
+
+
+Q3:
+First, the terminal awaits a keyboard response. Then the keyboard sends a response to the OS and the OS forwards this
+command to the terminal. When this operation ends, the terminal executes the 'kill' command and sends a SIGTERM signal
+with the given ID to the OS to perform. The OS will sends the signal to the 'shotwell' to kill itself. (if it doesnt
+kill itself, the os get the job done).
+
+
+Q4:
+Real time is used to count real world seconds, used for example in PC clock.
+Virtual time is used by the OS or internal PC parts, to perform 'tick' operations. Every machine may use different
+virtual time. Used for example in scheduling decisions.
